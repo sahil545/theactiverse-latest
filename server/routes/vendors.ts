@@ -1,5 +1,6 @@
 import { RequestHandler } from "express";
 import { requestQueue } from "../utils/request-queue";
+import { fetchWithTimeout } from "../utils/fetch-with-timeout";
 
 const LARAVEL_API_URL = "https://ecommerce.standtogetherhelp.com/api";
 
@@ -67,7 +68,7 @@ export const handleGetVendors: RequestHandler = async (req, res) => {
       const data: VendorsResponse = await requestQueue.enqueue(
         "vendors",
         async () => {
-          const response = await fetch(`${LARAVEL_API_URL}/users`);
+          const response = await fetchWithTimeout(`${LARAVEL_API_URL}/users`, { timeout: 10000 });
 
           if (!response.ok) {
             throw new Error(

@@ -1,5 +1,6 @@
 import { RequestHandler } from "express";
 import { requestQueue } from "../utils/request-queue";
+import { fetchWithTimeout } from "../utils/fetch-with-timeout";
 
 const LARAVEL_API_URL = "https://ecommerce.standtogetherhelp.com/api";
 
@@ -94,7 +95,7 @@ export const handleGetProductRatings: RequestHandler = async (req, res) => {
       const data: RatingsResponse = await requestQueue.enqueue(
         `ratings-${productId}`,
         async () => {
-          const response = await fetch(
+          const response = await fetchWithTimeout(
             `${LARAVEL_API_URL}/products/${productId}/ratings?page=${page}`,
             {
               method: "GET",
@@ -102,6 +103,7 @@ export const handleGetProductRatings: RequestHandler = async (req, res) => {
                 Accept: "application/json",
                 "Content-Type": "application/json",
               },
+              timeout: 10000,
             }
           );
 
@@ -152,7 +154,7 @@ export const handleGetUserRating: RequestHandler = async (req, res) => {
       });
     }
 
-    const response = await fetch(
+    const response = await fetchWithTimeout(
       `${LARAVEL_API_URL}/products/${productId}/my-rating`,
       {
         method: "GET",
@@ -161,6 +163,7 @@ export const handleGetUserRating: RequestHandler = async (req, res) => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
+        timeout: 10000,
       }
     );
 
@@ -207,12 +210,13 @@ export const handleCreateOrUpdateRating: RequestHandler = async (req, res) => {
         message: "Either authentication token or guest email/name is required",
       });
     }
-
-    const response = await fetch(
+WithTimeout(
       `${LARAVEL_API_URL}/products/${productId}/ratings`,
       {
         method: "POST",
         headers,
+        body: JSON.stringify(body),
+        timeout: 10000
         body: JSON.stringify(body),
       }
     );
@@ -246,13 +250,14 @@ export const handleDeleteRating: RequestHandler = async (req, res) => {
         message: "Authentication required",
       });
     }
-
-    const response = await fetch(`${LARAVEL_API_URL}/ratings/${ratingId}`, {
+WithTimeout(`${LARAVEL_API_URL}/ratings/${ratingId}`, {
       method: "DELETE",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
+      },
+      timeout: 10000 Authorization: `Bearer ${token}`,
       },
     });
 

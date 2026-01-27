@@ -1,5 +1,6 @@
 import { RequestHandler } from "express";
 import { requestQueue } from "../utils/request-queue";
+import { fetchWithTimeout } from "../utils/fetch-with-timeout";
 
 const LARAVEL_API_URL = "https://ecommerce.standtogetherhelp.com/api";
 
@@ -55,7 +56,7 @@ export const handleGetCategories: RequestHandler = async (req, res) => {
       const data: CategoriesResponse = await requestQueue.enqueue(
         "categories",
         async () => {
-          const response = await fetch(`${LARAVEL_API_URL}/categories`);
+          const response = await fetchWithTimeout(`${LARAVEL_API_URL}/categories`, { timeout: 10000 });
 
           if (!response.ok) {
             throw new Error(
@@ -104,7 +105,7 @@ export const handleGetSubCategories: RequestHandler = async (req, res) => {
       const data: SubCategoriesResponse = await requestQueue.enqueue(
         "sub-categories",
         async () => {
-          const response = await fetch(`${LARAVEL_API_URL}/sub-categories`);
+          const response = await fetchWithTimeout(`${LARAVEL_API_URL}/sub-categories`, { timeout: 10000 });
 
           if (!response.ok) {
             throw new Error(
@@ -182,8 +183,9 @@ export const handleGetCategoryWithProducts: RequestHandler = async (req, res) =>
       const data: CategoryWithProductsResponse = await requestQueue.enqueue(
         `category-with-products-${categoryId}`,
         async () => {
-          const response = await fetch(
-            `${LARAVEL_API_URL}/categories-with-products/${categoryId}`
+          const response = await fetchWithTimeout(
+            `${LARAVEL_API_URL}/categories-with-products/${categoryId}`,
+            { timeout: 10000 }
           );
 
           if (!response.ok) {
