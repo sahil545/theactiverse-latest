@@ -76,30 +76,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Top Categories */}
-            <div>
-              <h3 className="font-jakarta font-bold text-[20px] leading-[28px] mb-6">
-                Top Categories
-              </h3>
-              <ul className="space-y-5">
-                {[
-                  "Men's Clothing",
-                  "Women's Clothing",
-                  "Kid's Clothing",
-                  "Top Vendors",
-                  "Make your own shirt",
-                ].map((item) => (
-                  <li key={item}>
-                    <Link
-                      to="/"
-                      className="font-jakarta font-medium text-[16px] leading-[29px] text-[#7E7E7E] hover:text-black transition"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            
 
             {/* Newsletter */}
             <div>
