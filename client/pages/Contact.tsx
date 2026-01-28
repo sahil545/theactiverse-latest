@@ -215,7 +215,7 @@ export default function Contact() {
                       Email
                     </h3>
                     <p className="font-jakarta font-medium text-[16px] text-[#7E7E7E]">
-                      info@mikkop29.sg-host.com
+                      info@ytheactiverse.com
                     </p>
                     
                   </div>
@@ -233,32 +233,13 @@ export default function Contact() {
                       Phone
                     </h3>
                     <p className="font-jakarta font-medium text-[16px] text-[#7E7E7E]">
-                      (786) 380-3440
+                      561-281-2091
                     </p>
                    
                   </div>
                 </div>
 
-                {/* Address */}
-                <div className="flex gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-[#032088]/10 rounded-[10px] flex items-center justify-center">
-                      <MapPin className="w-8 h-8 text-[#032088]" />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="font-jakarta font-bold text-[20px] mb-2">
-                      Address
-                    </h3>
-                    <p className="font-jakarta font-medium text-[16px] text-[#7E7E7E]">
-                      9807c 62nd Terrace S
-                      <br />
-                      Boynton Beach, FL 33437
-                      <br />
-                      United States
-                    </p>
-                  </div>
-                </div>
+                
 
                 {/* Business Hours */}
                   {/* <div className="flex gap-6">
@@ -286,25 +267,7 @@ export default function Contact() {
           </div>
         </section>
 
-        {/* Map Section */}
-        <section className="w-full py-16">
-          <div className="max-w-7xl mx-auto px-4">
-            <h2 className="font-mirza font-bold text-[40px] md:text-[48px] leading-[50px] md:leading-[58px] mb-8 text-center">
-              Our Location
-            </h2>
-            <div className="w-full h-[500px] rounded-[20px] overflow-hidden shadow-lg">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3530.449289285034!2d-80.08944!3d26.5267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d947f6e8e6e6e7%3A0x1234567890abcdef!2s9807c%2062nd%20Terrace%20S%2C%20Boynton%20Beach%2C%20FL%2033437!5e0!3m2!1sen!2sus!4v1609459200000"
-                width="100%"
-                height="100%"
-                style={{ border: 0, minHeight: "500px" }}
-                allowFullScreen={true}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-          </div>
-        </section>
+        
       </main>
       <Footer />
     </>

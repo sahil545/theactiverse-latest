@@ -22,10 +22,7 @@ export default function Footer() {
                 <p className="font-jakarta font-bold text-[18px]">
                   561-281-2091
                 </p>
-                <p className="font-jakarta font-medium text-[16px] text-[#7E7E7E] leading-[29px]">
-                  1093 sanctuary cove Dr, North palm beach ,<br /> fl33410 561-281-2091
-                  
-                </p>
+                
               </div>
             </div>
 
