@@ -31,7 +31,7 @@ app.get("/api/ping", (_req: any, res: any) => {
 });
 
 app.get("/api/demo", handleDemo);
-app.get("/api/vendors", handleGetVendors);
+app.get("/api/users", handleGetVendors);
 app.get("/api/products", handleGetProducts);
 app.get("/api/categories", handleGetCategories);
 app.get("/api/sub-categories", handleGetSubCategories);
