@@ -28,27 +28,28 @@ export default function Footer() {
 
             {/* Information */}
             <div>
-              <h3 className="font-jakarta font-bold text-[20px] leading-[28px] mb-6">
-                Information
-              </h3>
-              <ul className="space-y-5">
-                {[
-                  "About us",
-                  "Our Blog",
-                  "Start a Return",
-                  "Contact Us",
-                ].map((item) => (
-                  <li key={item}>
-                    <Link
-                      to="/"
-                      className="font-jakarta font-medium text-[16px] leading-[29px] text-[#7E7E7E] hover:text-black transition"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+  <h3 className="font-jakarta font-bold text-[20px] leading-[28px] mb-6">
+    Information
+  </h3>
+
+  <ul className="space-y-5">
+    {[
+      { label: "Our Blog", path: "/blogs" },
+      { label: "Start a Return", path: "/" },
+      { label: "Contact Us", path: "/contact" },
+    ].map((item) => (
+      <li key={item.path}>
+        <Link
+          to={item.path}
+          className="font-jakarta font-medium text-[16px] leading-[29px] text-[#7E7E7E] hover:text-black transition"
+        >
+          {item.label}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
+
 
             {/* Useful Links */}
             <div>
