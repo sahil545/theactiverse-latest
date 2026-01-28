@@ -6,17 +6,17 @@ const slides = [
   {
     titleLight: "Empowering",
     titleBold: "Active Lifestyles",
-     image: "https://ecommerce.standtogetherhelp.com/public/backend_assets/images/banner1.jpg",
+     image: "https://admin.theactiverse.com/public/backend_assets/images/banner1.jpg",
   },
   {
     titleLight: "Train",
     titleBold: "Like a Pro",
-     image: "https://ecommerce.standtogetherhelp.com/public/backend_assets/images/banner2.jpg",
+     image: "https://admin.theactiverse.com/public/backend_assets/images/banner2.jpg",
   },
   {
     titleLight: "Push",
     titleBold: "Your Limits",
-    image: "https://ecommerce.standtogetherhelp.com/public/backend_assets/images/banner3.jpg",
+    image: "https://admin.theactiverse.com/public/backend_assets/images/banner3.jpg",
   },
 ];
 

@@ -161,7 +161,7 @@ export default function Header() {
               )}
 
               <Link
-                to="https://ecommerce.standtogetherhelp.com/register"
+                to="https://admin.theactiverse.com/register"
                 target="_blank"
                 rel="noopener noreferrer" style={{ backgroundColor: "#f38714" }}
                 className="hidden lg:inline-flex items-center justify-center px-4 py-3 bg-brand-blue text-white rounded-[10px] font-poppins font-medium text-[18px] hover:opacity-90 transition"

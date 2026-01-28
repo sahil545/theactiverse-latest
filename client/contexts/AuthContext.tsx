@@ -45,7 +45,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setIsLoading(true);
     try {
       const response = await fetch(
-        "https://ecommerce.standtogetherhelp.com/api/customer/register",
+        "https://admin.theactiverse.com/api/customer/register",
         {
           method: "POST",
           headers: {
@@ -84,7 +84,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setIsLoading(true);
     try {
       const response = await fetch(
-        "https://ecommerce.standtogetherhelp.com/api/customer/login",
+        "https://admin.theactiverse.com/api/customer/login",
         {
           method: "POST",
           headers: {

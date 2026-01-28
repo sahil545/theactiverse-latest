@@ -578,7 +578,7 @@ export default function Checkout() {
 
                       // Send order to backend
                       const response = await fetch(
-                        "https://ecommerce.standtogetherhelp.com/api/orders",
+                        "https://admin.theactiverse.com/api/orders",
                         {
                           method: "POST",
                           headers: {
@@ -650,7 +650,7 @@ export default function Checkout() {
                       console.log("Sending payment data:", paymentData);
 
                       const paymentResponse = await fetch(
-                        "https://ecommerce.standtogetherhelp.com/api/payments",
+                        "https://admin.theactiverse.com/api/payments",
                         {
                           method: "POST",
                           headers: {
@@ -699,7 +699,7 @@ export default function Checkout() {
                       );
                       try {
                         const invoiceResponse = await fetch(
-                          `https://ecommerce.standtogetherhelp.com/api/orders/${orderResult.order.id}/invoice`,
+                          `https://admin.theactiverse.com/api/orders/${orderResult.order.id}/invoice`,
                           {
                             method: "GET",
                             headers: {

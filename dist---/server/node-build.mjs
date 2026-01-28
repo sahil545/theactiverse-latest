@@ -101,7 +101,7 @@ async function fetchWithTimeout(url, options = {}) {
     throw error;
   }
 }
-const LARAVEL_API_URL$3 = "https://ecommerce.standtogetherhelp.com/api";
+const LARAVEL_API_URL$3 = "https://admin.theactiverse.com/api";
 const vendorsCache = /* @__PURE__ */ new Map();
 const CACHE_TTL$3 = 10 * 60 * 1e3;
 function getCacheKey$3(...args) {
@@ -159,7 +159,7 @@ const handleGetVendors = async (req, res) => {
     });
   }
 };
-const LARAVEL_API_URL$2 = "https://ecommerce.standtogetherhelp.com/api";
+const LARAVEL_API_URL$2 = "https://admin.theactiverse.com/api";
 const productsCache = /* @__PURE__ */ new Map();
 const CACHE_TTL$2 = 10 * 60 * 1e3;
 function getCacheKey$2(...args) {
@@ -217,7 +217,7 @@ const handleGetProducts = async (req, res) => {
     });
   }
 };
-const LARAVEL_API_URL$1 = "https://ecommerce.standtogetherhelp.com/api";
+const LARAVEL_API_URL$1 = "https://admin.theactiverse.com/api";
 const categoriesCache = /* @__PURE__ */ new Map();
 const CACHE_TTL$1 = 10 * 60 * 1e3;
 function getCacheKey$1(...args) {
@@ -355,7 +355,7 @@ const handleGetCategoryWithProducts = async (req, res) => {
     });
   }
 };
-const LARAVEL_API_URL = "https://ecommerce.standtogetherhelp.com/api";
+const LARAVEL_API_URL = "https://admin.theactiverse.com/api";
 const ratingsCache = /* @__PURE__ */ new Map();
 const CACHE_TTL = 5 * 60 * 1e3;
 function getCacheKey(...args) {

@@ -542,13 +542,13 @@ php artisan route:clear
 
 ### Test 1: Get Product Ratings
 ```bash
-curl -X GET "https://ecommerce.standtogetherhelp.com/api/products/1/ratings" \
+curl -X GET "https://admin.theactiverse.com/api/products/1/ratings" \
   -H "Accept: application/json"
 ```
 
 ### Test 2: Create a Rating (requires authentication)
 ```bash
-curl -X POST "https://ecommerce.standtogetherhelp.com/api/products/1/ratings" \
+curl -X POST "https://admin.theactiverse.com/api/products/1/ratings" \
   -H "Authorization: Bearer YOUR_AUTH_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -559,13 +559,13 @@ curl -X POST "https://ecommerce.standtogetherhelp.com/api/products/1/ratings" \
 
 ### Test 3: Get User's Rating
 ```bash
-curl -X GET "https://ecommerce.standtogetherhelp.com/api/products/1/my-rating" \
+curl -X GET "https://admin.theactiverse.com/api/products/1/my-rating" \
   -H "Authorization: Bearer YOUR_AUTH_TOKEN"
 ```
 
 ### Test 4: Delete Rating
 ```bash
-curl -X DELETE "https://ecommerce.standtogetherhelp.com/api/ratings/1" \
+curl -X DELETE "https://admin.theactiverse.com/api/ratings/1" \
   -H "Authorization: Bearer YOUR_AUTH_TOKEN"
 ```
 

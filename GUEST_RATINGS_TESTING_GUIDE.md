@@ -58,7 +58,7 @@ The frontend has been updated to:
 ### Test 1: Submit a Guest Rating via API
 
 ```bash
-curl -X POST "https://ecommerce.standtogetherhelp.com/api/products/1/ratings" \
+curl -X POST "https://admin.theactiverse.com/api/products/1/ratings" \
   -H "Content-Type: application/json" \
   -d '{
     "guest_email": "tester@example.com",
@@ -115,7 +115,7 @@ curl -X POST "https://ecommerce.standtogetherhelp.com/api/products/1/ratings" \
 ### Test 4: View All Ratings for a Product
 
 ```bash
-curl -X GET "https://ecommerce.standtogetherhelp.com/api/products/1/ratings"
+curl -X GET "https://admin.theactiverse.com/api/products/1/ratings"
 ```
 
 **Expected Response:**

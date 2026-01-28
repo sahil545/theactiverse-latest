@@ -208,7 +208,7 @@ public function getUserRating($productId): JsonResponse
 
 ### Test: Create a Guest Rating
 ```bash
-curl -X POST "https://ecommerce.standtogetherhelp.com/api/products/1/ratings" \
+curl -X POST "https://admin.theactiverse.com/api/products/1/ratings" \
   -H "Content-Type: application/json" \
   -d '{
     "guest_email": "test@example.com",
@@ -220,7 +220,7 @@ curl -X POST "https://ecommerce.standtogetherhelp.com/api/products/1/ratings" \
 
 ### Test: Get Guest Rating
 ```bash
-curl -X GET "https://ecommerce.standtogetherhelp.com/api/products/1/my-rating?guest_email=test@example.com" \
+curl -X GET "https://admin.theactiverse.com/api/products/1/my-rating?guest_email=test@example.com" \
   -H "Content-Type: application/json"
 ```
 

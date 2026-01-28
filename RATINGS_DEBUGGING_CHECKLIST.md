@@ -40,7 +40,7 @@ If routes don't appear:
 **Test in your browser or with curl:**
 
 ```bash
-curl -X GET "https://ecommerce.standtogetherhelp.com/api/products/1/ratings"
+curl -X GET "https://admin.theactiverse.com/api/products/1/ratings"
 ```
 
 **What to look for:**
@@ -152,12 +152,12 @@ php artisan view:clear
 
 **The frontend expects this API URL:**
 ```
-https://ecommerce.standtogetherhelp.com/api
+https://admin.theactiverse.com/api
 ```
 
 **This is defined in:** `client/lib/api.ts`
 ```typescript
-const API_BASE_URL = "https://ecommerce.standtogetherhelp.com/api";
+const API_BASE_URL = "https://admin.theactiverse.com/api";
 ```
 
 Make sure this matches your actual backend URL.
@@ -169,7 +169,7 @@ Make sure this matches your actual backend URL.
 **Create a test rating via curl:**
 
 ```bash
-curl -X POST "https://ecommerce.standtogetherhelp.com/api/products/1/ratings" \
+curl -X POST "https://admin.theactiverse.com/api/products/1/ratings" \
   -H "Content-Type: application/json" \
   -d '{
     "guest_email": "test@example.com",
@@ -297,7 +297,7 @@ php artisan config:clear
 php artisan route:list | grep ratings
 
 # 3. Test API directly with curl
-curl -X GET "https://ecommerce.standtogetherhelp.com/api/products/1/ratings"
+curl -X GET "https://admin.theactiverse.com/api/products/1/ratings"
 
 # 4. Check database directly
 mysql -u root -p your_database
@@ -305,7 +305,7 @@ SELECT COUNT(*) FROM product_ratings;
 SELECT * FROM product_ratings LIMIT 1;
 
 # 5. Test creating a rating
-curl -X POST "https://ecommerce.standtogetherhelp.com/api/products/1/ratings" \
+curl -X POST "https://admin.theactiverse.com/api/products/1/ratings" \
   -H "Content-Type: application/json" \
   -d '{"guest_email":"test@example.com","guest_name":"Test","rating":5}'
 

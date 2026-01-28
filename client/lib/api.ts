@@ -171,7 +171,7 @@ export function getProductImageUrl(imageUrl: string): string {
     return imageUrl;
   }
   // Otherwise construct the full URL (fallback for filename-only cases)
-  return `https://ecommerce.standtogetherhelp.com/storage/products/${imageUrl}`;
+  return `https://admin.theactiverse.com/storage/products/${imageUrl}`;
 }
 
 export interface SubCategory {

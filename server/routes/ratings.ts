@@ -2,7 +2,7 @@ import { RequestHandler } from "express";
 import { requestQueue } from "../utils/request-queue";
 import { fetchWithTimeout } from "../utils/fetch-with-timeout";
 
-const LARAVEL_API_URL = "https://ecommerce.standtogetherhelp.com/api";
+const LARAVEL_API_URL = "https://admin.theactiverse.com/api";
 
 // Simple in-memory cache with TTL
 const ratingsCache = new Map<

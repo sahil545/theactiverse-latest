@@ -328,7 +328,7 @@ Update `config/cors.php` to allow your frontend domain:
 ### Test Login Endpoint
 
 ```bash
-curl -X POST https://ecommerce.standtogetherhelp.com/api/login \
+curl -X POST https://admin.theactiverse.com/api/login \
   -H "Content-Type: application/json" \
   -d '{
     "email": "user@example.com",
@@ -356,7 +356,7 @@ curl -X POST https://ecommerce.standtogetherhelp.com/api/login \
 ### Test Register Endpoint
 
 ```bash
-curl -X POST https://ecommerce.standtogetherhelp.com/api/register \
+curl -X POST https://admin.theactiverse.com/api/register \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Jane Doe",
@@ -369,7 +369,7 @@ curl -X POST https://ecommerce.standtogetherhelp.com/api/register \
 ### Test Profile Endpoint (Protected)
 
 ```bash
-curl -X GET https://ecommerce.standtogetherhelp.com/api/profile \
+curl -X GET https://admin.theactiverse.com/api/profile \
   -H "Authorization: Bearer YOUR_TOKEN_HERE"
 ```
 
@@ -387,7 +387,7 @@ The frontend is already configured to use these endpoints:
 Make sure your `.env` file has:
 
 ```env
-APP_URL=https://ecommerce.standtogetherhelp.com
+APP_URL=https://admin.theactiverse.com
 DB_CONNECTION=mysql
 DB_HOST=your-db-host
 DB_PORT=3306
@@ -395,8 +395,8 @@ DB_DATABASE=your_db_name
 DB_USERNAME=your_db_user
 DB_PASSWORD=your_db_password
 
-SANCTUM_STATEFUL_DOMAINS=ecommerce.standtogetherhelp.com,localhost:3000,localhost:5173
-SESSION_DOMAIN=.ecommerce.standtogetherhelp.com
+SANCTUM_STATEFUL_DOMAINS=admin.theactiverse.com,localhost:3000,localhost:5173
+SESSION_DOMAIN=.admin.theactiverse.com
 ```
 
 ## Troubleshooting

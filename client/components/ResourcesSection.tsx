@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function ResourcesSection() {
   const articles = [
     {
-      image: "https://ecommerce.standtogetherhelp.com/blog1.jpg",
+      image: "https://admin.theactiverse.com/blog1.jpg",
       category: "Activewear Style",
       title: "Move Freely, Live Bold: The Activerse Way",
       description:
@@ -15,7 +15,7 @@ export default function ResourcesSection() {
       featured: true,
     },
     {
-      image: "https://ecommerce.standtogetherhelp.com/blog2.jpg",
+      image: "https://admin.theactiverse.com/blog2.jpg",
       category: "Fashion & Performance",
       categories: ["Activewear", "Streetwear"],
       title: "Are You Ready to Elevate Your Everyday Wear?",
