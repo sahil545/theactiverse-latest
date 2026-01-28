@@ -117,7 +117,7 @@ export default function TestimonialsSection() {
           ))}
         </div>
 
-        {/* Bottom CTA or Additional Info */}
+        {/* Bottom CTA or Additional Info 
         <div className="mt-16 text-center">
           <p className="font-jakarta text-slate-600 mb-6">
             Join hundreds of happy customers
@@ -138,7 +138,7 @@ export default function TestimonialsSection() {
               />
             </svg>
           </button>
-        </div>
+        </div>*/}
       </div>
     </section>
   );

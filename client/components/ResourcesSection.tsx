@@ -1,4 +1,5 @@
 import { ArrowRight, Calendar, User, BookOpen } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function ResourcesSection() {
   const articles = [
@@ -199,10 +200,13 @@ export default function ResourcesSection() {
             Access our complete library of design guides, tutorials, and best practices to
             create stunning custom apparel.
           </p>
-          <button className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-yellow-400 text-slate-900 font-jakarta font-semibold hover:bg-yellow-300 transition-colors duration-300 group/cta">
-            View All Articles
-            <ArrowRight className="w-4 h-4 group-hover/cta:translate-x-1 transition-transform" />
-          </button>
+          <Link
+  to="/blogs"
+  className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-yellow-400 text-slate-900 font-jakarta font-semibold hover:bg-yellow-300 transition-colors duration-300 group/cta"
+>
+  View All Articles
+  <ArrowRight className="w-4 h-4 group-hover/cta:translate-x-1 transition-transform" />
+</Link>
         </div>
       </div>
     </section>

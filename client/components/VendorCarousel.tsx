@@ -166,10 +166,13 @@ export default function VendorCarousel() {
         {/* Bottom CTA */}
         {!loading && vendors.length > 0 && (
           <div className="mt-16 text-center">
-            <button className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-slate-900 text-white font-jakarta font-bold hover:bg-slate-800 transition-colors duration-300 shadow-lg hover:shadow-xl">
-              Explore All Vendors
-              <ChevronRight className="w-4 h-4" />
-            </button>
+            <Link
+  to="/vendors"
+  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-slate-900 text-white font-jakarta font-bold hover:bg-slate-800 transition-colors duration-300 shadow-lg hover:shadow-xl"
+>
+  Explore All Vendors
+  <ChevronRight className="w-4 h-4" />
+</Link>
           </div>
         )}
       </div>

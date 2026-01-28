@@ -1,4 +1,5 @@
 import { Zap, Award, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function ExclusiveOfferSection() {
   return (
@@ -116,14 +117,20 @@ export default function ExclusiveOfferSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 text-white font-jakarta font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                <Zap className="w-5 h-5" />
-                Shop Now
-              </button>
-              <button className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border-2 border-slate-900 text-slate-900 font-jakarta font-bold text-lg hover:bg-slate-900 hover:text-white transition-all duration-300">
-                <TrendingUp className="w-5 h-5" />
-                Learn More
-              </button>
+              <Link
+  to="/shop"
+  className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 text-white font-jakarta font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
+>
+  <Zap className="w-5 h-5" />
+  Shop Now
+</Link>
+              <Link
+  to="/features"
+  className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border-2 border-slate-900 text-slate-900 font-jakarta font-bold text-lg hover:bg-slate-900 hover:text-white transition-all duration-300"
+>
+  <TrendingUp className="w-5 h-5" />
+  Learn More
+</Link>
             </div>
 
             {/* Trust Badges */}
