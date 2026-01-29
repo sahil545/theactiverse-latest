@@ -24,6 +24,7 @@ import Category from "./pages/Category";
 import Features from "./pages/Features";
 import ReturnPolicy from "./pages/ReturnPolicy";
 import ShippingFAQ from "./pages/ShippingFAQ";
+import MyAccount from "./pages/MyAccount";
 
 const queryClient = new QueryClient();
 
@@ -63,6 +64,7 @@ const AppRoutes = () => (
       <Route path="/blog/:slug" element={<Blog />} />
       <Route path="/return-policy" element={<ReturnPolicy />} />
       <Route path="/shipping-faq" element={<ShippingFAQ />} />
+      <Route path="/my-account" element={<MyAccount />} />
       {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
       <Route path="*" element={<NotFound />} />
     </Routes>

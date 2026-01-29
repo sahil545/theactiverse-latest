@@ -138,6 +138,13 @@ export default function Header() {
                           {user.email}
                         </p>
                       </div>
+                      <Link
+                        to="/my-account"
+                        onClick={() => setShowUserMenu(false)}
+                        className="w-full block px-4 py-3 text-left font-jakarta font-medium text-[14px] text-slate-700 hover:bg-slate-50 transition border-b"
+                      >
+                        My Account
+                      </Link>
                       <button
                         onClick={() => {
                           logout();

@@ -22,6 +22,8 @@ export default function ProductRating({ productId }: ProductRatingProps) {
   const [userRating, setUserRating] = useState<Rating | null>(null);
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [isRetrying, setIsRetrying] = useState(false);
 
   // Form states
   const [selectedRating, setSelectedRating] = useState(0);
@@ -46,10 +48,13 @@ export default function ProductRating({ productId }: ProductRatingProps) {
 
   const loadRatings = async () => {
     setLoading(true);
+    setError(null);
+    setIsRetrying(false);
     try {
       const data = await getProductRatings(productId, currentPage);
       if (data && data.ratings) {
         setRatings(data.ratings);
+        setError(null);
 
         // Handle both old and new response formats
         if (data.data && data.data.statistics) {
@@ -79,11 +84,18 @@ export default function ProductRating({ productId }: ProductRatingProps) {
         console.warn("No ratings data available or API not responding correctly");
         setRatings([]);
         setStatistics(null);
+        setError("Unable to load ratings at this time. Please try again later.");
       }
     } catch (error) {
       console.error("Error loading ratings:", error);
       setRatings([]);
       setStatistics(null);
+      const errorMessage = error instanceof Error ? error.message : "Unable to load ratings";
+      if (errorMessage.includes("rate limited") || errorMessage.includes("429")) {
+        setError("The ratings service is temporarily overloaded. Retrying automatically...");
+      } else {
+        setError(errorMessage);
+      }
     } finally {
       setLoading(false);
     }
@@ -241,6 +253,26 @@ export default function ProductRating({ productId }: ProductRatingProps) {
 
   return (
     <div className="py-8">
+      {/* Error Banner */}
+      {error && (
+        <div className="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-lg flex items-start gap-3">
+          <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+          <div className="flex-1">
+            <p className="text-sm text-amber-800">{error}</p>
+            <button
+              onClick={() => {
+                setIsRetrying(true);
+                loadRatings();
+              }}
+              disabled={isRetrying}
+              className="text-sm text-amber-700 font-medium hover:text-amber-900 transition mt-2 disabled:opacity-50"
+            >
+              {isRetrying ? "Retrying..." : "Try Again"}
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Rating Summary */}
       {statistics && statistics.total_ratings > 0 && (
         <div className="mb-8 pb-8 border-b border-slate-200">

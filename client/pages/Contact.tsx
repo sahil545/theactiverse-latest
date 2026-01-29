@@ -24,24 +24,70 @@ export default function Contact() {
     }));
   };
 
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.subject ||
-      !formData.message
-    ) {
-      toast.error("Please fill in all required fields");
+    // Validation
+    if (!formData.name.trim()) {
+      toast.error("Full Name is required");
+      return;
+    }
+
+    if (!formData.email.trim()) {
+      toast.error("Email Address is required");
+      return;
+    }
+
+    if (!validateEmail(formData.email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+
+    if (!formData.subject.trim()) {
+      toast.error("Subject is required");
+      return;
+    }
+
+    if (!formData.message.trim()) {
+      toast.error("Message is required");
       return;
     }
 
     setLoading(true);
     try {
-      // Simulate form submission
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      toast.success("Message sent successfully! We'll get back to you soon.");
+      const response = await fetch(
+        "https://admin.theactiverse.com/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name.trim(),
+            email: formData.email.trim(),
+            phone: formData.phone.trim(),
+            subject: formData.subject.trim(),
+            message: formData.message.trim(),
+          }),
+        }
+      );
+
+      const responseData = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          responseData.message || "Failed to send message. Please try again."
+        );
+      }
+
+      toast.success(
+        responseData.message || "Message sent successfully! We'll get back to you soon."
+      );
       setFormData({
         name: "",
         email: "",
@@ -50,7 +96,9 @@ export default function Contact() {
         message: "",
       });
     } catch (error) {
-      toast.error("Failed to send message. Please try again.");
+      const errorMessage =
+        error instanceof Error ? error.message : "Failed to send message. Please try again.";
+      toast.error(errorMessage);
     } finally {
       setLoading(false);
     }
