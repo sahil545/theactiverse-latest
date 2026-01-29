@@ -164,7 +164,7 @@ export default function ProductDetail() {
           className="inline-flex items-center gap-2 text-blue-500 hover:text-blue-700 mb-8"
         >
           <ChevronLeft className="w-5 h-5" />
-          Back
+          Backk
         </Link>
 
         {/* Product Section */}
