@@ -8,7 +8,7 @@ import { ArrowLeft, Check } from "lucide-react";
 import { getProductImageUrl } from "@/lib/api";
 import StripePaymentForm from "@/components/StripePaymentForm";
 import { toast } from "sonner";
-
+ 
 interface CheckoutFormData {
   firstName: string;
   lastName: string;
