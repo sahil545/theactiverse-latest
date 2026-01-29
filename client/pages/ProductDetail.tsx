@@ -132,8 +132,8 @@ export default function ProductDetail() {
     );
   }
 
-  const colors = product.product_colors?.split(",").map((c) => c.trim()) || [];
-  const sizes = product.product_sizes?.split(",").map((s) => s.trim()) || [];
+  const colors = product.product_colors?.split(",").map((c) => c.trim()).filter((c) => c.toLowerCase() !== "n/a") || [];
+  const sizes = product.product_sizes?.split(",").map((s) => s.trim()).filter((s) => s.toLowerCase() !== "n/a") || [];
   const allImages = [
     product.product_thumbnail,
     ...(product.gallery_images || []),
