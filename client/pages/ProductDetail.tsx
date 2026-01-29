@@ -57,9 +57,9 @@ export default function ProductDetail() {
     if (!product) return;
 
     const colors =
-      product.product_colors?.split(",").map((c) => c.trim()) || [];
+      product.product_colors?.split(",").map((c) => c.trim()).filter((c) => c.toLowerCase() !== "n/a") || [];
     const sizes =
-      product.product_sizes?.split(",").map((s) => s.trim()) || [];
+      product.product_sizes?.split(",").map((s) => s.trim()).filter((s) => s.toLowerCase() !== "n/a") || [];
 
     if (colors.length > 0 && !selectedColor) {
       toast.error("Please select a color", {
