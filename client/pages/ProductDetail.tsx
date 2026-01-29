@@ -57,9 +57,15 @@ export default function ProductDetail() {
     if (!product) return;
 
     const colors =
-      product.product_colors?.split(",").map((c) => c.trim()).filter((c) => c.toLowerCase() !== "n/a") || [];
+      product.product_colors
+        ?.split(",")
+        .map((c) => c.trim())
+        .filter((c) => c.toLowerCase() !== "n/a") || [];
     const sizes =
-      product.product_sizes?.split(",").map((s) => s.trim()).filter((s) => s.toLowerCase() !== "n/a") || [];
+      product.product_sizes
+        ?.split(",")
+        .map((s) => s.trim())
+        .filter((s) => s.toLowerCase() !== "n/a") || [];
 
     if (colors.length > 0 && !selectedColor) {
       toast.error("Please select a color", {
@@ -132,8 +138,16 @@ export default function ProductDetail() {
     );
   }
 
-  const colors = product.product_colors?.split(",").map((c) => c.trim()).filter((c) => c.toLowerCase() !== "n/a") || [];
-  const sizes = product.product_sizes?.split(",").map((s) => s.trim()).filter((s) => s.toLowerCase() !== "n/a") || [];
+  const colors =
+    product.product_colors
+      ?.split(",")
+      .map((c) => c.trim())
+      .filter((c) => c.toLowerCase() !== "n/a") || [];
+  const sizes =
+    product.product_sizes
+      ?.split(",")
+      .map((s) => s.trim())
+      .filter((s) => s.toLowerCase() !== "n/a") || [];
   const allImages = [
     product.product_thumbnail,
     ...(product.gallery_images || []),
@@ -217,7 +231,9 @@ export default function ProductDetail() {
             {/* Price */}
             <div className="mb-6">
               <div className="bg-slate-50 rounded-lg px-4 py-3 inline-block mb-4">
-                <p className="text-sm text-slate-500 mb-1 uppercase tracking-wide font-semibold">Price</p>
+                <p className="text-sm text-slate-500 mb-1 uppercase tracking-wide font-semibold">
+                  Price
+                </p>
                 <p className="text-3xl font-bold text-slate-700">
                   ${product.product_price.toLocaleString("en-US")}
                 </p>
@@ -285,8 +301,6 @@ export default function ProductDetail() {
                 </div>
               </div>
             )}
-
-
 
             {/* Quantity Selector & Add to Cart */}
             {product.product_quantity > 0 && (
