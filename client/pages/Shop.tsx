@@ -237,7 +237,7 @@ export default function Shop() {
                           </div>
 
                           {/* Description */}
-                          <p className="text-sm font-jakarta text-slate-600 mb-4 line-clamp-2 flex-1">
+                          <p className="hidden text-sm font-jakarta text-slate-600 mb-4 line-clamp-2 flex-1">
                             {product.product_short_description}
                           </p>
 

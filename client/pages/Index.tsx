@@ -14,10 +14,11 @@ export default function Index() {
     <div className="min-h-screen bg-white">
       <Header />
       <HeroSection />
+      <CategorySection />
       <CategoryWithProductsSection categoryId={10} />
           {/* <CategoryWithProductsSection categoryId={8} /> */}
       <CategoryWithProductsSection categoryId={6} />
-      <CategorySection />
+      
       <VendorSection />
       <TestimonialsSection />
       <ExclusiveOfferSection />
