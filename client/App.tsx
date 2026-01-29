@@ -22,6 +22,8 @@ import Blogs from "./pages/Blogs";
 import Blog from "./pages/Blog";
 import Category from "./pages/Category";
 import Features from "./pages/Features";
+import ReturnPolicy from "./pages/ReturnPolicy";
+import ShippingFAQ from "./pages/ShippingFAQ";
 
 const queryClient = new QueryClient();
 
