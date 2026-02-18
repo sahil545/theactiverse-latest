@@ -96,9 +96,17 @@ export default function FeaturesSection() {
 
         {/* Bottom CTA Section */}
         <div className="mt-16 md:mt-20 text-center">
-          <p className="font-jakarta text-blue-100 mb-8 text-lg">
+          <p className="font-jakarta text-blue-100 mb-4 text-lg">
             Ready to experience the difference?
           </p>
+          <div className="flex flex-col items-center gap-4 mb-4">
+              {/* Payment Methods */}
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/4aa9aff5b0a630119db32ae115dfaddf9ca3035a?width=716"
+                alt="Payment Methods"
+                className="h-6"
+              />
+              </div>
           <Link
   to="/shop"
   className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-white text-blue-600 font-jakarta font-bold text-lg hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105"

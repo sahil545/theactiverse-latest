@@ -32,6 +32,7 @@ export default function Footer() {
                   className="h-12 w-auto mb-6"
                 />
                 <div className="space-y-3">
+                  <p className="font-jakarta font-medium text-[16px]">1093 sanctuary cove Dr , North palm beach, Fl33410</p>
                   <p className="font-jakarta font-medium text-[16px] text-[#7E7E7E]">
                     info@theactiverse.com
                   </p>
@@ -39,74 +40,78 @@ export default function Footer() {
                 </div>
               </div>
 
-              {/* Information */}
-              <div>
-                <h3 className="font-jakarta font-bold text-[20px] leading-[28px] mb-6">
-                  Information
-                </h3>
+             {/* Information */}
+<div>
+  <h3 className="font-jakarta font-bold text-[20px] leading-[28px] mb-6">
+    Information
+  </h3>
 
-                <ul className="space-y-5">
-                  {[
-                    { label: "Our Blog", path: "/blogs" },
-                    { label: "Start a Return", path: "/return-policy" },
-                    { label: "Contact Us", path: "/contact" },
-                  ].map((item) => (
-                    <li key={item.path}>
-                      <Link
-                        to={item.path}
-                        className="font-jakarta font-medium text-[16px] leading-[29px] text-[#7E7E7E] hover:text-black transition"
-                      >
-                        {item.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+  <ul className="space-y-5">
+    {[
+      { label: "Start a Return", path: "/return-policy" },
+      { label: "Shipping Policy", path: "/shipping-faq" },
+      { label: "Terms & Conditions", path: "/term-conditions" },
+      { label: "Privacy Policy", path: "/privacy-policy" },
+    ].map((item) => (
+      <li key={item.path}>
+        <Link
+          to={item.path}
+          className="font-jakarta font-medium text-[16px] leading-[29px] text-[#7E7E7E] hover:text-black transition"
+        >
+          {item.label}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
 
-              {/* Useful Links */}
-              <div>
-                <h3 className="font-jakarta font-bold text-[20px] leading-[28px] mb-6">
-                  Useful links
-                </h3>
-                <ul className="space-y-5">
-                  {[
-                    { label: "My Account", isAction: true },
-                    {
-                      label: "Become a Vendor",
-                      path: "https://admin.theactiverse.com/register",
-                      external: true,
-                    },
-                    { label: "Shipping FAQ", path: "/shipping-faq" },
-                  ].map((item) => (
-                    <li key={item.label}>
-                      {item.isAction ? (
-                        <button
-                          onClick={handleMyAccount}
-                          className="font-jakarta font-medium text-[16px] leading-[29px] text-[#7E7E7E] hover:text-black transition text-left w-full"
-                        >
-                          {item.label}
-                        </button>
-                      ) : item.external ? (
-                        <a
-                          href={item.path}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="font-jakarta font-medium text-[16px] leading-[29px] text-[#7E7E7E] hover:text-black transition"
-                        >
-                          {item.label}
-                        </a>
-                      ) : (
-                        <Link
-                          to={item.path}
-                          className="font-jakarta font-medium text-[16px] leading-[29px] text-[#7E7E7E] hover:text-black transition"
-                        >
-                          {item.label}
-                        </Link>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+{/* Useful Links */}
+<div>
+  <h3 className="font-jakarta font-bold text-[20px] leading-[28px] mb-6">
+    Useful Links
+  </h3>
+
+  <ul className="space-y-5">
+    {[
+      { label: "Our Blog", path: "/blogs" },
+      { label: "Contact Us", path: "/contact" },
+      { label: "My Account", isAction: true },
+      {
+        label: "Become a Vendor",
+        path: "https://admin.theactiverse.com/register",
+        external: true,
+      },
+    ].map((item) => (
+      <li key={item.label}>
+        {item.isAction ? (
+          <button
+            onClick={handleMyAccount}
+            className="font-jakarta font-medium text-[16px] leading-[29px] text-[#7E7E7E] hover:text-black transition text-left w-full"
+          >
+            {item.label}
+          </button>
+        ) : item.external ? (
+          <a
+            href={item.path}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-jakarta font-medium text-[16px] leading-[29px] text-[#7E7E7E] hover:text-black transition"
+          >
+            {item.label}
+          </a>
+        ) : (
+          <Link
+            to={item.path}
+            className="font-jakarta font-medium text-[16px] leading-[29px] text-[#7E7E7E] hover:text-black transition"
+          >
+            {item.label}
+          </Link>
+        )}
+      </li>
+    ))}
+  </ul>
+</div>
+
 
               {/* Newsletter */}
               <div>
