@@ -6,7 +6,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Check } from "lucide-react";
 import { getProductImageUrl } from "@/lib/api";
-import StripePaymentForm from "@/components/StripePaymentForm";
+import AuthorizeNetPaymentForm from "@/components/AuthorizeNetPaymentForm";
 import { toast } from "sonner";
 
 interface CheckoutFormData {
@@ -663,7 +663,7 @@ export default function Checkout() {
                   Payment Information
                 </h2>
 
-                <StripePaymentForm
+                <AuthorizeNetPaymentForm
                   amount={total}
                   onSubmit={(e) => {
                     if (
@@ -691,11 +691,11 @@ export default function Checkout() {
                     }
                     return true;
                   }}
-                  onPaymentSuccess={async (paymentIntentId) => {
+                  onPaymentSuccess={async (transactionId) => {
                     console.log(
                       "=== CHECKOUT: Payment success callback triggered ===",
                     );
-                    console.log("Payment Intent ID:", paymentIntentId);
+                    console.log("Transaction ID:", transactionId);
 
                     try {
                       console.log("Checkout: Starting order processing");
@@ -736,7 +736,6 @@ export default function Checkout() {
                           total_price: item.product_price * item.quantity,
                           selected_color: item.selectedColor || null,
                           selected_size: item.selectedSize || null,
-                          selected_gender: item.selectedGender || null,
                         })),
                       };
 
@@ -806,9 +805,9 @@ export default function Checkout() {
                       // Record payment
                       const paymentData = {
                         order_id: orderResult.order.id,
-                        payment_method: "stripe",
+                        payment_method: "authorize_net",
                         amount: total,
-                        transaction_id: paymentIntentId,
+                        transaction_id: transactionId,
                         card_last_four: "****",
                         card_brand: "card",
                       };
